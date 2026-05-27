@@ -8,6 +8,7 @@ workflows:
         script: |
           export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
           export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools
+          export SKIP_JDK_VERSION_CHECK=true
           sdkmanager "platforms;android-34" "build-tools;34.0.0"
       - name: Clone deagle library
         script: |

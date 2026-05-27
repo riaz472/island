@@ -11,9 +11,7 @@ workflows:
           sdkmanager "platforms;android-34" "build-tools;34.0.0"
       - name: Clone deagle library
         script: |
-          cd ..
-          git clone https://github.com/oasisfeng/deagle.git
-          cd island
+          git clone https://github.com/oasisfeng/deagle.git ../deagle
       - name: Build APK
         script: |
           export ANDROID_SDK_ROOT=/usr/local/share/android-sdk

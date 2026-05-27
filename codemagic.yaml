@@ -2,7 +2,7 @@ workflows:
   island-build:
     name: Build Island APK
     environment:
-      java: 17
+      java: 11
     scripts:
       - name: Setup Android SDK path
         script: |

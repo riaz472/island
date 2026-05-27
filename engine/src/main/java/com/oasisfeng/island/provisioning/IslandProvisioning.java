@@ -51,7 +51,7 @@ import com.oasisfeng.island.util.Users;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Supplier;
+import com.oasisfeng.android.util.Supplier;
 
 import static android.app.AppOpsManager.MODE_ALLOWED;
 import static android.app.Notification.PRIORITY_HIGH;

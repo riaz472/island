@@ -1,0 +1,28 @@
+workflows:
+  island-build:
+    name: Island APK Build
+    environment:
+      java: 17
+      android_sdk: 34
+    cache:
+      cache_paths:
+        - ~/.gradle
+    scripts:
+      - name: Clone deagle library alongside Island
+        script: |
+          cd ..
+          echo "Cloning deagle library..."
+          git clone https://github.com/oasisfeng/deagle.git
+          cd island
+      - name: Setup Android SDK components
+        script: |
+          sdkmanager "platforms;android-34" "build-tools;34.0.0"
+      - name: Build Island complete release APK
+        script: |
+          ./gradlew :assembly:assembleCompleteRelease
+    artifacts:
+      - assembly/build/outputs/apk/complete/release/*.apk
+    publishing:
+      email:
+        recipients:
+          - riazalishahani485@gmail.com
